@@ -1,10 +1,10 @@
-import { Button, links as buttonLinks } from "~/components/RegularStylesheets/Button";
 import { Header, links as headerLinks } from "~/components/RegularStylesheets/Header";
 import { Navigation, links as navigationLinks } from "~/components/RegularStylesheets/Navigation";
 import { FeedItem, links as feedItemLinks, Data as feedItemDataType} from "~/components/RegularStylesheets/FeedItem";
 import { Ranking, links as rankingLinks, Data as RankingData } from "~/components/RegularStylesheets/Ranking";
 import { Footer, links as footerLinks} from "~/components/RegularStylesheets/Footer";
-import styles from "~/styles/global.css";
+import globalStyles from "~/styles/global.css";
+import pageStyles from "~/styles/page.css"
 import feedItemDataset from "~/datas/dummy-feed-items.json"
 import rankingDataset from "~/datas/dummy-ranking.json"
 
@@ -20,28 +20,33 @@ export function links() {
       rel: "stylesheet",
       href: "https://fonts.googleapis.com/icon?family=Material+Icons+Round",
     },
-    ...buttonLinks(),
     ...headerLinks(),
     ...navigationLinks(),
     ...feedItemLinks(),
     ...rankingLinks(),
     ...footerLinks(),
-    { rel: "stylesheet", href: styles },
+    { rel: "stylesheet", href: globalStyles },
+    { rel: "stylesheet", href: pageStyles },
   ];
 }
 
 export default function RegularStylesheets() {
   return (
-    <div>
+    <>
       <Header />
-      <Navigation />
-      <h1>Regular Stylesheets</h1>
-      {feedItemDataset.map((feedItemData: feedItemDataType) => (
-        <FeedItem data={feedItemData} key={feedItemData.title} />
-      ))}
-      <Ranking dataset={rankingDataset} />
-      <Button>Button</Button>
-      <Footer />
-    </div>
+      <div className="page-contents">
+        <Navigation className="page-navigation"/>
+        <main className="page-main">
+          <h2 className="page-main__headline">ホーム</h2>
+          {feedItemDataset.map((feedItemData: feedItemDataType) => (
+            <FeedItem data={feedItemData} key={feedItemData.title} className="page-feedItem"/>
+          ))}
+        </main>
+        <aside className="page-sidebar">
+          <Ranking dataset={rankingDataset}/>
+          <Footer className="page-footer"/>
+        </aside>
+      </div>
+    </>
   );
 }
