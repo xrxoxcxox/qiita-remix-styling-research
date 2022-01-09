@@ -1,0 +1,29 @@
+.header {
+  background-color: var(--color-surface);
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header__inner {
+  align-items: center;
+  display: flex;
+  width: min(100%, var(--width-contents));
+}
+
+.header__logo {
+  align-items: center;
+  display: flex;
+}
+
+.header__button {
+  margin-left: auto;
+}
+
+.header__icon {
+  border-radius: 50%;
+  margin-left: 24px;
+}
