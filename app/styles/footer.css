@@ -1,0 +1,24 @@
+.footer {
+  color: var(--color-dark-text-medium);
+  font-size: var(--font-size-body2);
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__link {
+  color: inherit;
+  margin-right: 16px;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: var(--color-dark-text-high);
+}
+
+.footer__copyright {
+  display: block;
+  margin-top: 8px;
+}
