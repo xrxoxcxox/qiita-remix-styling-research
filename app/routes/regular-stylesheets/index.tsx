@@ -1,8 +1,10 @@
 import { Button, links as buttonLinks } from "~/components/RegularStylesheets/Button";
 import { Header, links as headerLinks } from "~/components/RegularStylesheets/Header";
 import { Navigation, links as navigationLinks } from "~/components/RegularStylesheets/Navigation";
-import { Footer, links as footerLinks } from "~/components/RegularStylesheets/Footer";
+import { FeedItem, links as feedItemLinks, Data as feedItemDataType} from "~/components/RegularStylesheets/FeedItem";
+import { Footer, links as footerLinks} from "~/components/RegularStylesheets/Footer";
 import styles from "~/styles/global.css";
+import feedItemDataset from "~/datas/dummy-feed-items.json"
 
 export function links() {
   return [
@@ -19,6 +21,7 @@ export function links() {
     ...buttonLinks(),
     ...headerLinks(),
     ...navigationLinks(),
+    ...feedItemLinks(),
     ...footerLinks(),
     { rel: "stylesheet", href: styles },
   ];
@@ -30,6 +33,9 @@ export default function RegularStylesheets() {
       <Header />
       <Navigation />
       <h1>Regular Stylesheets</h1>
+      {feedItemDataset.map((feedItemData: feedItemDataType) => (
+        <FeedItem data={feedItemData} key={feedItemData.title} />
+      ))}
       <Button>Button</Button>
       <Footer />
     </div>
