@@ -2,9 +2,11 @@ import { Button, links as buttonLinks } from "~/components/RegularStylesheets/Bu
 import { Header, links as headerLinks } from "~/components/RegularStylesheets/Header";
 import { Navigation, links as navigationLinks } from "~/components/RegularStylesheets/Navigation";
 import { FeedItem, links as feedItemLinks, Data as feedItemDataType} from "~/components/RegularStylesheets/FeedItem";
+import { Ranking, links as rankingLinks, Data as RankingData } from "~/components/RegularStylesheets/Ranking";
 import { Footer, links as footerLinks} from "~/components/RegularStylesheets/Footer";
 import styles from "~/styles/global.css";
 import feedItemDataset from "~/datas/dummy-feed-items.json"
+import rankingDataset from "~/datas/dummy-ranking.json"
 
 export function links() {
   return [
@@ -22,6 +24,7 @@ export function links() {
     ...headerLinks(),
     ...navigationLinks(),
     ...feedItemLinks(),
+    ...rankingLinks(),
     ...footerLinks(),
     { rel: "stylesheet", href: styles },
   ];
@@ -36,6 +39,7 @@ export default function RegularStylesheets() {
       {feedItemDataset.map((feedItemData: feedItemDataType) => (
         <FeedItem data={feedItemData} key={feedItemData.title} />
       ))}
+      <Ranking dataset={rankingDataset} />
       <Button>Button</Button>
       <Footer />
     </div>
