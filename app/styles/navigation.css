@@ -1,0 +1,24 @@
+.navigation__link {
+  border-radius: 2px;
+  color: inherit;
+  display: flex;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.navigation__link:hover {
+  background-color: #e0e0e0;
+}
+
+.navigation__link + .navigation__link {
+  margin-top: 4px;
+}
+
+.navigation__linkIcon {
+  color: var(--color-dark-text-medium);
+}
+
+.navigation__linkText {
+  font-weight: bold;
+  margin-left: 8px;
+}
