@@ -1,4 +1,5 @@
 import { GlobalStyle } from "~/components/StyledComponents/Global";
+import { Button } from "~/components/StyledComponents/Button";
 
 export function links() {
   return [
@@ -20,6 +21,7 @@ export default function StyledComponents() {
     <>
       <GlobalStyle />
       <h1>styled-components</h1>
+      <Button>Button</Button>
     </>
   );
 }
