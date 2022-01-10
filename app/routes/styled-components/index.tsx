@@ -3,6 +3,11 @@ import { Button } from "~/components/StyledComponents/Button";
 import { Header } from "~/components/StyledComponents/Header";
 import { Footer } from "~/components/StyledComponents/Footer";
 import { Navigation } from "~/components/StyledComponents/Navigation";
+import feedItemDataset from "~/datas/dummy-feed-items.json";
+import {
+  FeedItem,
+  Data as feedItemDataType,
+} from "~/components/StyledComponents/FeedItem";
 
 export function links() {
   return [
@@ -25,6 +30,13 @@ export default function StyledComponents() {
       <GlobalStyle />
       <Header />
       <Navigation />
+      {feedItemDataset.map((feedItemData: feedItemDataType) => (
+        <FeedItem
+          data={feedItemData}
+          key={feedItemData.title}
+          className="page-feedItem"
+        />
+      ))}
       <h1>styled-components</h1>
       <Button>Button</Button>
       <Footer />
