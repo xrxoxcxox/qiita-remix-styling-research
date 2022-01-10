@@ -2,6 +2,7 @@ import { GlobalStyle } from "~/components/StyledComponents/Global";
 import { Button } from "~/components/StyledComponents/Button";
 import { Header } from "~/components/StyledComponents/Header";
 import { Footer } from "~/components/StyledComponents/Footer";
+import { Navigation } from "~/components/StyledComponents/Navigation";
 
 export function links() {
   return [
@@ -23,6 +24,7 @@ export default function StyledComponents() {
     <>
       <GlobalStyle />
       <Header />
+      <Navigation />
       <h1>styled-components</h1>
       <Button>Button</Button>
       <Footer />
