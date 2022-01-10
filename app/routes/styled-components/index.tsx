@@ -8,6 +8,8 @@ import {
   FeedItem,
   Data as feedItemDataType,
 } from "~/components/StyledComponents/FeedItem";
+import rankingDataset from "~/datas/dummy-ranking.json";
+import { Ranking } from "~/components/StyledComponents/Ranking";
 
 export function links() {
   return [
@@ -37,6 +39,7 @@ export default function StyledComponents() {
           className="page-feedItem"
         />
       ))}
+      <Ranking dataset={rankingDataset}/>
       <h1>styled-components</h1>
       <Button>Button</Button>
       <Footer />
