@@ -1,4 +1,4 @@
-import { ReactElement, ComponentPropsWithRef, forwardRef } from "react";
+import { ComponentPropsWithRef, forwardRef } from "react";
 import { Button } from "~/components/StyledComponents/Button";
 import styled from "styled-components";
 
@@ -17,7 +17,7 @@ type Props = {
 } & ComponentPropsWithRef<"article">;
 
 export const FeedItem = forwardRef<HTMLElement, Props>(
-  ({ data, className, ...props }, ref): ReactElement => {
+  ({ data, className, ...props }, ref) => {
     const { thumbnail, date, title, favorites, comments, url } = data;
     return (
       <StyledFeedItem className={className} {...props} ref={ref}>
