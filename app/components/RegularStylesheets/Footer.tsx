@@ -1,4 +1,4 @@
-import { ReactElement, ComponentPropsWithRef, forwardRef } from "react";
+import { ComponentPropsWithRef, forwardRef } from "react";
 import styles from "~/styles/footer.css";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 export const links = () => [{ rel: "stylesheet", href: styles }];
 
 export const Footer = forwardRef<HTMLElement, Props>(
-  ({ className, ...props }, ref): ReactElement => {
+  ({ className, ...props }, ref) => {
     return (
       <footer className={`footer ${className}`} {...props} ref={ref}>
         <div className="footer__links">

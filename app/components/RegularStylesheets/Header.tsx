@@ -1,4 +1,4 @@
-import { ReactElement, ComponentPropsWithRef, forwardRef } from "react";
+import { ComponentPropsWithRef, forwardRef } from "react";
 import {
   Button,
   links as buttonLinks,
@@ -16,7 +16,7 @@ export const links = () => [
 ];
 
 export const Header = forwardRef<HTMLElement, Props>(
-  ({ className, ...props }, ref): ReactElement => {
+  ({ className, ...props }, ref) => {
     return (
       <header className={`header ${className}`} {...props} ref={ref}>
         <div className="header__inner">

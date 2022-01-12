@@ -1,9 +1,4 @@
-import {
-  ReactElement,
-  ReactNode,
-  ComponentPropsWithRef,
-  forwardRef,
-} from "react";
+import { ReactNode, ComponentPropsWithRef, forwardRef } from "react";
 import styles from "~/styles/button.css";
 
 export const links = () => [{ rel: "stylesheet", href: styles }];
@@ -16,15 +11,13 @@ type Props = {
 } & ComponentPropsWithRef<"button">;
 
 export const Button = forwardRef<HTMLButtonElement, Props>(
-  ({
-    children,
-    className,
-    size = "m",
-    variant = "fill",
-    ...props
-  }, ref): ReactElement => {
+  ({ children, className, size = "m", variant = "fill", ...props }, ref) => {
     return (
-      <button className={`button ${variant} ${size} ${className}`} {...props} ref={ref}>
+      <button
+        className={`button ${variant} ${size} ${className}`}
+        {...props}
+        ref={ref}
+      >
         {children}
       </button>
     );

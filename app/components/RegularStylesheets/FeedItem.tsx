@@ -1,26 +1,26 @@
-import { ReactElement, ComponentPropsWithRef, forwardRef } from "react";
-import { Button } from '~/components/RegularStylesheets/Button'
-import styles from '~/styles/feed-item.css'
+import { ComponentPropsWithRef, forwardRef } from "react";
+import { Button } from "~/components/RegularStylesheets/Button";
+import styles from "~/styles/feed-item.css";
 
 export type Data = {
-  thumbnail?: string
-  date: string
-  title: string
-  favorites: number
-  comments: number
-  url: string
-}
+  thumbnail?: string;
+  date: string;
+  title: string;
+  favorites: number;
+  comments: number;
+  url: string;
+};
 
 type Props = {
-  data: Data
-  className?: string
-} & ComponentPropsWithRef<"article">
+  data: Data;
+  className?: string;
+} & ComponentPropsWithRef<"article">;
 
 export const links = () => [{ rel: "stylesheet", href: styles }];
 
 export const FeedItem = forwardRef<HTMLElement, Props>(
-  ({ data, className, ...props }, ref): ReactElement => {
-    const { thumbnail, date, title, favorites, comments, url } = data
+  ({ data, className, ...props }, ref) => {
+    const { thumbnail, date, title, favorites, comments, url } = data;
     return (
       <article className={`feed-item ${className}`} {...props} ref={ref}>
         {thumbnail && (
@@ -36,15 +36,11 @@ export const FeedItem = forwardRef<HTMLElement, Props>(
             <h3 className="feed-item__title">{title}</h3>
           </a>
           <div className="feed-item__reactions">
-            <span
-              className={`material-icons-round feed-item__reactionIcon`}
-            >
+            <span className={`material-icons-round feed-item__reactionIcon`}>
               favorite
             </span>
             <span className="feed-item__reactionCount">{favorites}</span>
-            <span
-              className={`material-icons-round feed-item__reactionIcon`}
-            >
+            <span className={`material-icons-round feed-item__reactionIcon`}>
               mode_comment
             </span>
             <span className="feed-item__reactionCount">{comments}</span>
@@ -59,6 +55,6 @@ export const FeedItem = forwardRef<HTMLElement, Props>(
           </div>
         </div>
       </article>
-    )
+    );
   }
-)
+);
