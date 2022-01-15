@@ -1,4 +1,4 @@
-import { ReactElement, ComponentPropsWithRef, forwardRef } from "react";
+import { ComponentPropsWithRef, forwardRef } from "react";
 import styled from "styled-components";
 import { Button } from "~/components/StyledComponents/Button";
 import logoImage from "~/images/logotype.svg";
@@ -8,7 +8,7 @@ type Props = {
 } & ComponentPropsWithRef<"header">;
 
 export const Header = forwardRef<HTMLElement, Props>(
-  ({ className, ...props }, ref): ReactElement => {
+  ({ className, ...props }, ref) => {
     return (
       <StyledHeader className={className} {...props} ref={ref}>
         <StyledHeaderInner>
@@ -38,25 +38,24 @@ const StyledHeader = styled.header`
   position: sticky;
   top: 0;
   z-index: 1;
-`
+`;
 
 const StyledHeaderInner = styled.div`
   align-items: center;
   display: flex;
   width: min(100%, var(--width-contents));
-`
+`;
 
 const StyledHeaderLogo = styled.h1`
   align-items: center;
   display: flex;
-`
+`;
 
 const StyledHeaderButton = styled(Button)`
   margin-left: auto;
-`
-
+`;
 
 const StyledHeaderIcon = styled.img`
   border-radius: 50%;
   margin-left: 24px;
-`
+`;

@@ -1,11 +1,6 @@
 import clsx from "clsx";
-import {
-  ReactElement,
-  ReactNode,
-  ComponentPropsWithRef,
-  forwardRef,
-} from "react";
-import styled from 'styled-components';
+import { ReactNode, ComponentPropsWithRef, forwardRef } from "react";
+import styled from "styled-components";
 
 type Props = {
   children: ReactNode;
@@ -15,15 +10,13 @@ type Props = {
 } & ComponentPropsWithRef<"button">;
 
 export const Button = forwardRef<HTMLButtonElement, Props>(
-  ({
-    children,
-    className,
-    size = "m",
-    variant = "fill",
-    ...props
-  }, ref): ReactElement => {
+  ({ children, className, size = "m", variant = "fill", ...props }, ref) => {
     return (
-      <StyledButton className={clsx(variant, size, className)} {...props} ref={ref}>
+      <StyledButton
+        className={clsx(variant, size, className)}
+        {...props}
+        ref={ref}
+      >
         {children}
       </StyledButton>
     );
@@ -58,4 +51,4 @@ const StyledButton = styled.button`
   &.s {
     font-size: var(--font-size-body3);
   }
-`
+`;

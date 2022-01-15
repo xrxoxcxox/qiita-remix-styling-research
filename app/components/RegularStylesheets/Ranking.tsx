@@ -1,4 +1,4 @@
-import { ReactElement, ComponentPropsWithRef, forwardRef } from "react";
+import { ComponentPropsWithRef, forwardRef } from "react";
 import styles from "~/styles/ranking.css";
 
 export type Data = { title: string; url: string }[];
@@ -11,7 +11,7 @@ type Props = {
 export const links = () => [{ rel: "stylesheet", href: styles }];
 
 export const Ranking = forwardRef<HTMLDivElement, Props>(
-  ({ dataset, className, ...props }, ref): ReactElement => {
+  ({ dataset, className, ...props }, ref) => {
     return (
       <div className={`ranking ${className}`} {...props} ref={ref}>
         <h2 className="ranking__headline">ランキング</h2>

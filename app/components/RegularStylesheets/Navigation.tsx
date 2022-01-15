@@ -1,4 +1,4 @@
-import { ReactElement, ComponentPropsWithRef, forwardRef } from "react";
+import { ComponentPropsWithRef, forwardRef } from "react";
 import styles from "~/styles/navigation.css";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 export const links = () => [{ rel: "stylesheet", href: styles }];
 
 export const Navigation = forwardRef<HTMLElement, Props>(
-  ({ className, ...props }, ref): ReactElement => {
+  ({ className, ...props }, ref) => {
     return (
       <nav className={className} {...props} ref={ref}>
         <a href="#" className="navigation__link">
