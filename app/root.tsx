@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import {
   Links,
   LiveReload,
@@ -8,7 +7,6 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
-import StylesContext from "./StylesContext";
 import styles from "./tailwind.css";
 
 export const meta: MetaFunction = () => {
@@ -20,7 +18,6 @@ export function links() {
 }
 
 export default function App() {
-  const styles = useContext(StylesContext);
   return (
     <html lang="en">
       <head>
