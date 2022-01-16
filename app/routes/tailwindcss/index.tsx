@@ -7,6 +7,8 @@ import {
   Data as feedItemDataType,
 } from "~/components/TailwindCSS/FeedItem";
 import feedItemDataset from "~/datas/dummy-feed-items.json";
+import { Ranking } from "~/components/TailwindCSS/Ranking";
+import rankingDataset from "~/datas/dummy-ranking.json";
 
 export default function Tailwind() {
   return (
@@ -21,6 +23,7 @@ export default function Tailwind() {
 
         />
       ))}
+      <Ranking dataset={rankingDataset} />
       <Button>Test</Button>
       <Footer />
     </>
