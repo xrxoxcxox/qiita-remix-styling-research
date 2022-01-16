@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import {
   Links,
   LiveReload,
@@ -8,14 +7,29 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
-import StylesContext from "./StylesContext";
+import styles from "./tailwind.css";
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
 };
 
+export function links() {
+  return [
+    { rel: "preconnect", href: "https://fonts.googleapis.com" },
+    { rel: "preconnect", href: "https://fonts.gstatic.com" },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans:wght@400;700&display=swap",
+    },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/icon?family=Material+Icons+Round",
+    },
+    { rel: "stylesheet", href: styles }
+  ];
+}
+
 export default function App() {
-  const styles = useContext(StylesContext);
   return (
     <html lang="en">
       <head>
